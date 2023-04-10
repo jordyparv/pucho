@@ -3,13 +3,13 @@ import React from 'react';
 import {Image} from 'react-native';
 import truncate from '../helpers/truncate';
 import {useNavigation} from '@react-navigation/native';
-export default function StoryIcon({active}) {
+export default function UserStoryIcon({active, uploader}) {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       activeOpacity={0.5}
       className="mr-2"
-      onPress={() => navigation.navigate('Stories')}>
+      onPress={() => navigation.navigate('UserStory')}>
       <View className="mr-auto items-center justify-center">
         <View
           className={`border-2 rounded-full p-1 ${

@@ -2,12 +2,14 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
-function Track() {
+import {useNavigation} from '@react-navigation/native';
+function NotificationItem() {
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       className="my-2"
       onPress={() => {
-        console.log('pressed');
+        navigation.navigate('Stories');
       }}>
       <View className="flex flex-row items-center">
         <Image
@@ -18,9 +20,9 @@ function Track() {
         />
         <View className="flex-1 justify-center ml-2">
           <Text className="text-white text-xl" numberOfLines={1}>
-            kl ki story
+            No Caption...
           </Text>
-          <Text className="text-white/40 font-bold text-sm">12k listening</Text>
+          <Text className="text-white/40 font-bold text-sm">Ten hours ago</Text>
         </View>
         <View className="justify-between items-end">
           <Icons name="play" color="#f9f9f9" size={26} />
@@ -31,4 +33,4 @@ function Track() {
   );
 }
 
-export default Track;
+export default NotificationItem;

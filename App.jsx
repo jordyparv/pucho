@@ -1,14 +1,13 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AppStack from './src/screens/AppStack';
-import {LogBox} from 'react-native';
-LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
-LogBox.ignoreAllLogs(); //Ignore all log notifications
+
+import AuthStack from './src/screens/AuthStack';
 export default function App() {
+  const user = {name: 'jordan'};
   return (
     <NavigationContainer>
-      <AppStack />
+      {user ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }
